@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111522">
+  <title>Kiran Kumar R | 3D Visualizer & Product Technical Designer</title>
+  <meta name="description" content="Kiran Kumar R: 3D visualization, interior design and IMOS iX product technical design. 10+ years across residential interiors, modular kitchens and furniture.">
+  <meta property="og:title" content="Kiran Kumar R | Spaces, made real.">
+  <meta property="og:description" content="Explore an interactive 3D portfolio of interior visualization and product technical design.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kiran-kumar-spatial-portfolio.dummyapp108.chatgpt.site">
+  <meta property="og:image" content="https://kiran-kumar-spatial-portfolio.dummyapp108.chatgpt.site/assets/kitchen-concept.webp">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111a17'/%3E%3Ctext x='32' y='43' font-size='34' font-family='sans-serif' text-anchor='middle' fill='%23bad0bf'%3EK%3C/text%3E%3C/svg%3E">
+  <link rel="preload" href="assets/manrope.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">{"imports":{"three":"./assets/three.module.js"}}</script>
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header wrap">
+    <a class="brand" href="#main" aria-label="Kiran Kumar R home"><span class="monogram">K<span>R</span></span><span>Kiran Kumar R<span class="brand-sub">Visualization & product design</span></span></a>
+    <nav aria-label="Main navigation"><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
+    <button class="theme-button" id="theme" type="button" aria-label="Switch color theme"><span class="icon" data-icon="sun" aria-hidden="true"></span><span class="theme-label">Light mode</span></button>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-heading">
+      <div class="hero-copy">
+        <p class="eyebrow">3D visualizer & product technical designer</p>
+        <h1 id="hero-heading">Spaces,<br><span>made real.</span></h1>
+        <p class="intro">I’m Kiran Kumar R. I turn interior ideas into compelling visuals and production-ready furniture.</p>
+        <div class="actions"><a class="button primary" href="#work">Explore work <span class="icon" data-icon="arrow-up-right" aria-hidden="true"></span></a><a class="text-link" href="Kiran-Kumar-Resume.pdf" download>Download resume <span class="icon" data-icon="arrow-down" aria-hidden="true"></span></a></div>
+      </div>
+      <div class="scene-shell">
+        <div id="scene" role="img" aria-label="Interactive 3D cutaway kitchen with modular cabinets, island, stools, pendant lamps and a plant. Use the buttons below to rotate or change the cabinet finish.">
+          <div id="scene-fallback"><img src="assets/kitchen-concept.webp" alt="Illustrative contemporary kitchen concept" width="1536" height="1024"><p id="scene-status" role="status">Preparing the 3D room…</p></div>
+        </div>
+        <div class="scene-caption"><span>Interactive kitchen concept</span><span id="drag-hint">Drag to explore</span></div>
+        <div class="scene-toolbar" aria-label="3D scene controls">
+          <div class="finishes" role="group" aria-label="Cabinet finish">
+            <button class="swatch" data-finish="coral" style="--swatch:#d9826f" aria-label="Coral cabinet finish" aria-pressed="true" disabled></button>
+            <button class="swatch" data-finish="ocean" style="--swatch:#5686aa" aria-label="Ocean cabinet finish" aria-pressed="false" disabled></button>
+            <button class="swatch" data-finish="lilac" style="--swatch:#9c84ba" aria-label="Lilac cabinet finish" aria-pressed="false" disabled></button>
+            <span id="finish-label" aria-live="polite">Coral</span>
+          </div>
+          <div class="view-controls"><button id="explode" type="button" aria-pressed="false" disabled><span class="icon" data-icon="stack" aria-hidden="true"></span><span>Explode</span></button><button id="rotate" type="button" aria-pressed="false" disabled><span class="icon" data-icon="play" aria-hidden="true"></span><span>Rotate</span></button><button id="reset" type="button" aria-label="Reset view" title="Reset view" disabled><span class="icon" data-icon="arrow-counter-clockwise" aria-hidden="true"></span></button></div>
+        </div>
+        <noscript><p>The 3D controls need JavaScript. The portfolio and resume remain available below.</p></noscript>
+      </div>
+    </section>
+    <section class="stats wrap" aria-label="Career highlights">
+      <div><strong>10<span>+</span></strong><p>Years in interior & product design</p></div>
+      <div><strong>7</strong><p>Years of hands-on 3D visualization</p></div>
+      <div><strong>62,000<span>+</span></strong><p>IMOS cabinet modules created & managed</p></div>
+    </section>
+    <section class="approach wrap section" id="work" aria-labelledby="work-heading">
+      <figure class="concept-figure reveal"><img src="assets/kitchen-concept.webp" width="1536" height="1024" loading="lazy" alt="Illustrative kitchen with green cabinets, walnut joinery and a stone island"><figcaption>AI-generated interior concept, presented for illustration.</figcaption></figure>
+      <div class="approach-copy reveal"><h2 id="work-heading">A clear vision.<br>A buildable design.</h2><p class="section-intro">From light and material to the details that make a cabinet work, I connect design intent with execution.</p>
+        <div class="expertise"><h3><span class="icon" data-icon="cube" aria-hidden="true"></span>Visualize the space</h3><p>Interior modelling, material mapping, lighting and V-Ray renders that bring residential spaces into focus.</p></div>
+        <div class="expertise"><h3><span class="icon" data-icon="ruler" aria-hidden="true"></span>Resolve the details</h3><p>IMOS iX development, factory-ready drawings, modular configurations and hardware integration.</p></div>
+        <div class="expertise"><h3><span class="icon" data-icon="stack" aria-hidden="true"></span>Bring teams together</h3><p>Technical reviews, mentoring and coordination between design, factory and site teams.</p></div>
+      </div>
+    </section>
+    <section class="projects wrap section reveal" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Selected visualization experience</h2>
+      <p class="section-intro">Interior presentation work spanning 3D modelling, architectural texturing, scene lighting, V-Ray rendering and image compositing.</p>
+      <div class="project-names"><h3>Sobha City</h3><h3>Century Central</h3><h3>5-Summits</h3></div>
+      <p class="note">Projects listed in my professional resume. Original project imagery is not displayed here.</p>
+    </section>
+    <section class="experience wrap section" id="experience" aria-labelledby="experience-heading">
+      <div class="experience-heading reveal"><p class="eyebrow">A decade of making spaces work</p><h2 id="experience-heading">From visualization<br>to technical leadership.</h2><p class="section-intro">A career built across design, production and the people connecting them.</p></div>
+      <div class="timeline">
+        <article class="job reveal"><div class="job-meta"><span>Livspace</span><time>2022 - Jan 2026</time></div><h3>IMOS Product Designer, Technical</h3><p>Created and managed 62,000+ cabinet modules, developed Experience Centre display units and supported product R&D and standardization.</p><p class="job-detail">Coordinated 10-15 team members, mentored colleagues and resolved production detailing queries.</p></article>
+        <article class="job reveal"><div class="job-meta"><span>SpiceRack Kitchens</span><time>2019 - 2022</time></div><h3>Senior / Lead Interior Designer</h3><p>Led projects from space planning through production and installation, while continuing hands-on 3ds Max modelling and V-Ray rendering.</p><p class="job-detail">Coordinated a team of 8 across design, visualization, factory and site.</p></article>
+        <article class="job reveal"><div class="job-meta"><span>SpiceRack Kitchens</span><time>2017 - 2019</time></div><h3>Interior Designer</h3><p>Translated client requirements into layouts, materials and rendered design options, supported by execution drawings and feasibility checks.</p></article>
+        <article class="job reveal"><div class="job-meta"><span>SpiceRack Kitchens</span><time>2015 - 2017</time></div><h3>3D Visualizer</h3><p>Produced kitchen, wardrobe and residential models and renders, including materials, lighting, revisions and Photoshop compositing.</p></article>
+      </div>
+    </section>
+    <section class="skills wrap section reveal" aria-labelledby="skills-heading"><h2 id="skills-heading">The tools behind the detail.</h2>
+      <div class="skill-grid"><div class="skill-feature"><h3>Visualization</h3><div class="tool-names"><span><i class="tool-icon blue"><i class="icon" data-icon="cube" aria-hidden="true"></i></i>3ds Max</span><span><i class="tool-icon coral"><i class="icon" data-icon="sun" aria-hidden="true"></i></i>V-Ray</span><span><i class="tool-icon violet"><i class="icon" data-icon="image" aria-hidden="true"></i></i>Photoshop</span></div><p>Modelling, materials, lighting and compositing.</p></div><div class="skill-group"><h3>Technical design</h3><div class="tool-names"><span><i class="tool-icon coral"><i class="icon" data-icon="ruler" aria-hidden="true"></i></i>IMOS iX</span><span><i class="tool-icon blue"><i class="icon" data-icon="scissors" aria-hidden="true"></i></i>Cut Rite</span><span><i class="tool-icon violet"><i class="icon" data-icon="stack" aria-hidden="true"></i></i>KCDW</span></div><p>Cabinet development, production detailing and shop drawings.</p></div><div class="skill-group materials"><h3>Materials & execution</h3><p>Plywood, MDF, HDHMR, laminate surfaces and edge-banding.</p><p>Hinges, drawer runners, profiles, connectors and installation clearances.</p><h3 class="additional">Additional creative tools</h3><div class="creative-tools"><span><i class="icon" data-icon="vector-three" aria-hidden="true"></i>Illustrator</span><span><i class="icon" data-icon="film-strip" aria-hidden="true"></i>Premiere Pro</span><span><i class="icon" data-icon="sparkle" aria-hidden="true"></i>After Effects</span><span><i class="icon" data-icon="paint-brush" aria-hidden="true"></i>CorelDRAW</span></div></div></div>
+      <div class="education"><div><h3>BA in VFX & Animation</h3><p>Mahatma Gandhi University, Meghalaya<br>2013-2015 · 81%</p></div><div><h3>Creative Mind Graphic Design Award</h3><p>Winner in 2014 and 2015</p></div></div>
+    </section>
+    <section class="contact wrap section reveal" id="contact" aria-labelledby="contact-heading"><p class="eyebrow">Bengaluru, India</p><h2 id="contact-heading">Let’s make your<br>next space work.</h2><a class="contact-email" href="mailto:rkiran.kumar95@gmail.com">rkiran.kumar95@gmail.com <span class="icon" data-icon="arrow-up-right" aria-hidden="true"></span></a><div class="contact-bottom"><a href="tel:+918892092016">+91 88920 92016</a><a class="text-link" href="Kiran-Kumar-Resume.pdf" download>Download resume <span class="icon" data-icon="arrow-down" aria-hidden="true"></span></a></div></section>
+  </main>
+  <footer class="wrap footer"><span>© <span id="year">2026</span> Kiran Kumar R</span><a href="https://github.com/sanidhyy/3d-portfolio" target="_blank" rel="noreferrer">3D interaction inspired by sanidhyy ↗</a><a href="#main">Back to top ↑</a></footer>
+</body>
+</html>
