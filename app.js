@@ -32,3 +32,33 @@ import('./scene.js').catch(() => {
   document.querySelector('#scene-status').textContent = '3D is unavailable in this browser. Enjoy the interior concept instead.';
   document.querySelector('#drag-hint').textContent = 'Illustrative concept';
 });
+const toolDescriptions = [
+  ['3ds Max', 'Architectural and furniture modelling, scene composition and material mapping.'],
+  ['V-Ray', 'Interior lighting, material development and presentation rendering.'],
+  ['Photoshop', 'Image editing, render post-production and compositing.'],
+  ['IMOS iX CAD', 'Modular cabinet development, standard configurations and factory-ready detailing.'],
+  ['Cut Rite', 'Part of my cabinetry and production software toolkit.'],
+  ['KCDW', 'Part of my cabinetry and production software toolkit.'],
+  ['Adobe Illustrator', 'Additional creative software in my design toolkit.'],
+  ['Premiere Pro', 'Additional creative software in my design toolkit.'],
+  ['After Effects', 'Additional creative software in my design toolkit.'],
+  ['CorelDRAW', 'Additional creative software in my design toolkit.']
+];
+document.querySelectorAll('[data-tool]').forEach(button => button.addEventListener('click', () => {
+  const [title, description] = toolDescriptions[Number(button.dataset.tool)];
+  document.querySelector('#tool-title').textContent = title;
+  document.querySelector('#tool-description').textContent = description;
+  document.querySelectorAll('[data-tool]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+  document.querySelector('#tools-canvas').dispatchEvent(new CustomEvent('selecttool', { detail: Number(button.dataset.tool) }));
+}));
+function loadTools() {
+  import('./tools-scene.js').catch(() => {
+    document.querySelector('.tools-loading').textContent = 'The 3D toolkit is unavailable in this browser. Explore each tool below.';
+  });
+}
+if ('IntersectionObserver' in window) {
+  const toolsObserver = new IntersectionObserver(entries => {
+    if (entries.some(entry => entry.isIntersecting)) { toolsObserver.disconnect(); loadTools(); }
+  }, { rootMargin: '400px' });
+  toolsObserver.observe(document.querySelector('#tools-canvas'));
+} else loadTools();
