@@ -23,5 +23,6 @@ assert(!/[—–]/.test(html), 'Unexpected typography separators');
 assert(css.includes('prefers-reduced-motion'), 'Missing reduced-motion styling');
 const manifest = JSON.parse(readFileSync('.openai/hosting.json', 'utf8'));
 assert(manifest.project_id && manifest.static.directory === 'dist');
-for (const file of ['dist/app.js', 'dist/scene.js']) execFileSync(process.execPath, ['--check', file]);
+for (const file of ['dist/app.js', 'dist/scene.js', 'dist/tools-scene.js']) execFileSync(process.execPath, ['--check', file]);
+assert.equal([...html.matchAll(/data-tool="\d+"/g)].length, 10, 'All ten software tools must remain accessible');
 console.log('Passed: local assets, icons, anchors, PDF, hosting manifest, motion fallback and JavaScript syntax.');

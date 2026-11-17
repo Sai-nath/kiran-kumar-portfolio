@@ -1,6 +1,6 @@
 # Kiran Kumar R portfolio
 
-Static portfolio with a custom Three.js modular kitchen, cabinet finishes, rotation and exploded view, responsive typography, dark/light themes, software icons and a resume download.
+Static portfolio with a custom Three.js modular kitchen, cabinet finishes, rotation and exploded view, plus ten animated, extruded 3D software tiles with selectable tool descriptions and pause/play controls. Includes responsive typography, dark/light themes and a resume download.
 
 Preview: `python3 -m http.server 4173 --directory dist`
 
@@ -24,6 +24,6 @@ Prompt: Create a high-end architectural visualization of a contemporary modular 
 
 Scope includes static HTML content, styles, browser interaction scripts, self-hosted library/font/icon/image assets, resume download and Sites publishing configuration. No existing callers, account flows or databases were modified.
 
-Browser checks cover desktop and mobile, finish switching, pause/reset, exploded view, both themes and console errors. `check.mjs` catches missing deployment assets, broken local anchors and invalid JavaScript. No physical device testing or Lighthouse audit was performed.
+Browser checks cover desktop and mobile, finish switching, pause/reset, exploded view, both themes, the floating 3D toolkit and console errors. `check.mjs` catches missing deployment assets, broken local anchors and invalid JavaScript. No physical device testing or Lighthouse audit was performed.
 
 Contact links open the visitor's email or phone application. No backend contact form or analytics was added.
