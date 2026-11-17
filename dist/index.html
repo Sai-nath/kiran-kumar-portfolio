@@ -1,106 +1,209 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111522">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0b0d">
   <title>Kiran Kumar R | 3D Visualizer & Product Technical Designer</title>
-  <meta name="description" content="Kiran Kumar R: 3D visualization, interior design and IMOS iX product technical design. 10+ years across residential interiors, modular kitchens and furniture.">
-  <meta property="og:title" content="Kiran Kumar R | Spaces, made real.">
-  <meta property="og:description" content="Explore an interactive 3D portfolio of interior visualization and product technical design.">
+  <meta name="description" content="Kiran Kumar R: 3D visualization, interior design and IMOS iX product technical design. 10+ years across residential interiors, modular kitchens, wardrobes and custom furniture.">
+  <meta property="og:title" content="Kiran Kumar R | Rendered spaces, engineered furniture">
+  <meta property="og:description" content="An interactive 3D portfolio of interior visualization and product technical design.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kiran-kumar-spatial-portfolio.dummyapp108.chatgpt.site">
   <meta property="og:image" content="https://kiran-kumar-spatial-portfolio.dummyapp108.chatgpt.site/assets/kitchen-concept.webp">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111a17'/%3E%3Ctext x='32' y='43' font-size='34' font-family='sans-serif' text-anchor='middle' fill='%23bad0bf'%3EK%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b0b0d'/%3E%3Ctext x='32' y='45' font-size='38' font-family='Georgia,serif' font-style='italic' text-anchor='middle' fill='%23d6f25e'%3EK%3C/text%3E%3C/svg%3E">
   <link rel="preload" href="assets/manrope.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/InstrumentSerif-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="modulepreload" href="assets/three.module.js">
   <link rel="stylesheet" href="style.css">
   <script type="importmap">{"imports":{"three":"./assets/three.module.js"}}</script>
   <script type="module" src="app.js"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <header class="header wrap">
-    <a class="brand" href="#main" aria-label="Kiran Kumar R home"><span class="monogram">K<span>R</span></span><span>Kiran Kumar R<span class="brand-sub">Visualization & product design</span></span></a>
-    <nav aria-label="Main navigation"><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
-    <button class="theme-button" id="theme" type="button" aria-label="Switch color theme"><span class="icon" data-icon="sun" aria-hidden="true"></span><span class="theme-label">Light mode</span></button>
+  <div class="progress" aria-hidden="true"></div>
+  <header class="header" id="header">
+    <div class="header-inner wrap">
+      <a class="brand" href="#top" aria-label="Kiran Kumar R, back to top"><span class="mark" aria-hidden="true">K<i>r</i></span><span class="brand-name">Kiran Kumar R<small>Visualization & product design</small></span></a>
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <a href="#work">Work</a><a href="#tools">Toolkit</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a class="pill" href="Kiran-Kumar-Resume.pdf" download><span class="icon" data-icon="arrow-down" aria-hidden="true"></span><span>Resume</span></a>
+        <button class="icon-button" id="theme" type="button" aria-label="Switch to light mode"><span class="icon" data-icon="sun" aria-hidden="true"></span></button>
+        <button class="icon-button menu-button" id="menu" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span><span></span></button>
+      </div>
+    </div>
   </header>
+
   <main id="main">
-    <section class="hero wrap" aria-labelledby="hero-heading">
-      <div class="hero-copy">
-        <p class="eyebrow">3D visualizer & product technical designer</p>
-        <h1 id="hero-heading">Spaces,<br><span>made real.</span></h1>
-        <p class="intro">I’m Kiran Kumar R. I turn interior ideas into compelling visuals and production-ready furniture.</p>
-        <div class="actions"><a class="button primary" href="#work">Explore work <span class="icon" data-icon="arrow-up-right" aria-hidden="true"></span></a><a class="text-link" href="Kiran-Kumar-Resume.pdf" download>Download resume <span class="icon" data-icon="arrow-down" aria-hidden="true"></span></a></div>
-      </div>
-      <div class="scene-shell">
-        <div id="scene" role="img" aria-label="Interactive 3D cutaway kitchen with modular cabinets, island, stools, pendant lamps and a plant. Use the buttons below to rotate or change the cabinet finish.">
-          <div id="scene-fallback"><img src="assets/kitchen-concept.webp" alt="Illustrative contemporary kitchen concept" width="1536" height="1024"><p id="scene-status" role="status">Preparing the 3D room…</p></div>
+    <section class="hero" id="top" aria-labelledby="hero-heading" data-chapter="0">
+      <div class="hero-sticky">
+        <div id="scene" role="img" aria-label="Interactive 3D interior scene: a sunlit living space with a lacquered sideboard, ribbed walnut wall, potted olive tree and terracotta lounge chair. Scrolling turns the sideboard into an exploded technical view and back.">
+          <div id="scene-fallback"><img src="assets/kitchen-concept.webp" alt="AI-generated illustrative kitchen concept" width="1536" height="1024"><p id="scene-status" role="status">Building the 3D scene…</p></div>
         </div>
-        <div class="scene-caption"><span>Interactive kitchen concept</span><span id="drag-hint">Drag to explore</span></div>
-        <div class="scene-toolbar" aria-label="3D scene controls">
-          <div class="finishes" role="group" aria-label="Cabinet finish">
-            <button class="swatch" data-finish="coral" style="--swatch:#d9826f" aria-label="Coral cabinet finish" aria-pressed="true" disabled></button>
-            <button class="swatch" data-finish="ocean" style="--swatch:#5686aa" aria-label="Ocean cabinet finish" aria-pressed="false" disabled></button>
-            <button class="swatch" data-finish="lilac" style="--swatch:#9c84ba" aria-label="Lilac cabinet finish" aria-pressed="false" disabled></button>
-            <span id="finish-label" aria-live="polite">Coral</span>
+        <div class="hero-overlay wrap">
+          <div class="hero-title">
+            <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>3D visualizer / product technical designer</p>
+            <h1 id="hero-heading"><span class="line">Kiran</span><span class="line"><em>Kumar R</em></span></h1>
           </div>
-          <div class="view-controls"><button id="explode" type="button" aria-pressed="false" disabled><span class="icon" data-icon="stack" aria-hidden="true"></span><span>Explode</span></button><button id="rotate" type="button" aria-pressed="false" disabled><span class="icon" data-icon="play" aria-hidden="true"></span><span>Rotate</span></button><button id="reset" type="button" aria-label="Reset view" title="Reset view" disabled><span class="icon" data-icon="arrow-counter-clockwise" aria-hidden="true"></span></button></div>
+          <div class="chapters">
+            <div class="chapter" data-step="0">
+              <p class="chapter-num"><span>01</span> Visualize</p>
+              <p class="chapter-title">I render interiors, then engineer the furniture inside them.</p>
+              <p class="chapter-text">10+ years across residential interiors, modular kitchens, wardrobes and custom furniture. Based in Bengaluru.</p>
+              <div class="actions"><a class="button primary" href="#work">Explore work <span class="icon" data-icon="arrow-up-right" aria-hidden="true"></span></a><a class="button ghost" href="Kiran-Kumar-Resume.pdf" download>Download resume <span class="icon" data-icon="arrow-down" aria-hidden="true"></span></a></div>
+            </div>
+            <div class="chapter" data-step="1">
+              <p class="chapter-num"><span>02</span> Engineer</p>
+              <p class="chapter-title">Every panel, hinge and clearance resolved.</p>
+              <p class="chapter-text">IMOS iX development and factory-ready detailing. 62,000+ cabinet modules created and managed at Livspace.</p>
+            </div>
+            <div class="chapter" data-step="2">
+              <p class="chapter-num"><span>03</span> Deliver</p>
+              <p class="chapter-title">Design, factory and site, aligned.</p>
+              <p class="chapter-text">Technical reviews, mentoring and coordination with teams of 8 at SpiceRack and 10-15 at Livspace.</p>
+            </div>
+          </div>
+          <div class="hud">
+            <div class="steps" role="group" aria-label="Scene chapters">
+              <button type="button" data-goto="0" aria-current="step"><span>01</span> Visualize</button>
+              <button type="button" data-goto="1" aria-current="false"><span>02</span> Engineer</button>
+              <button type="button" data-goto="2" aria-current="false"><span>03</span> Deliver</button>
+            </div>
+            <div class="scene-toolbar" role="group" aria-label="3D scene controls">
+              <div class="finishes" role="group" aria-label="Sideboard finish">
+                <button class="swatch" type="button" data-finish="sage" style="--swatch:#7d8b6a" aria-label="Sage lacquer finish" aria-pressed="true" disabled></button>
+                <button class="swatch" type="button" data-finish="walnut" style="--swatch:#6b4529" aria-label="Smoked walnut finish" aria-pressed="false" disabled></button>
+                <button class="swatch" type="button" data-finish="ink" style="--swatch:#25313f" aria-label="Ink blue lacquer finish" aria-pressed="false" disabled></button>
+                <span id="finish-label" aria-live="polite">Sage lacquer</span>
+              </div>
+              <button class="tool-button" id="view-tech" type="button" aria-pressed="false" disabled><span class="icon" data-icon="stack" aria-hidden="true"></span><span class="label">Technical view</span></button>
+              <button class="tool-button" id="view-open" type="button" aria-pressed="false" disabled><span class="icon" data-icon="arrows-out" aria-hidden="true"></span><span class="label">Open fronts</span></button>
+              <button class="tool-button" id="view-motion" type="button" aria-pressed="false" disabled><span class="icon" data-icon="pause" aria-hidden="true"></span><span class="label">Pause motion</span></button>
+              <button class="tool-button" id="view-reset" type="button" disabled><span class="icon" data-icon="arrow-counter-clockwise" aria-hidden="true"></span><span class="label">Reset view</span></button>
+            </div>
+          </div>
+          <p class="scene-label"><span id="drag-hint">Scroll to explore</span><span class="sep" aria-hidden="true"></span><span>Illustrative real-time scene, built in code. Not a client project.</span></p>
         </div>
-        <noscript><p>The 3D controls need JavaScript. The portfolio and resume remain available below.</p></noscript>
       </div>
     </section>
-    <section class="stats wrap" aria-label="Career highlights">
-      <div><strong>10<span>+</span></strong><p>Years in interior & product design</p></div>
-      <div><strong>7</strong><p>Years of hands-on 3D visualization</p></div>
-      <div><strong>62,000<span>+</span></strong><p>IMOS cabinet modules created & managed</p></div>
+
+    <section class="stats" aria-label="Career highlights">
+      <div class="wrap stats-grid">
+        <div class="stat reveal"><strong><span data-count="10">10</span><sup>+</sup></strong><p>Years in interior and product design</p></div>
+        <div class="stat reveal"><strong><span data-count="7">7</span></strong><p>Years of hands-on 3D visualization, 2015 to 2022</p></div>
+        <div class="stat reveal"><strong><span data-count="62000">62,000</span><sup>+</sup></strong><p>IMOS cabinet modules created and managed</p></div>
+        <div class="stat reveal"><strong>10-15</strong><p>Team members coordinated at Livspace</p></div>
+      </div>
+      <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>3D modelling</span><span>Texturing</span><span>Scene lighting</span><span>V-Ray rendering</span><span>Compositing</span><span>IMOS iX</span><span>Factory-ready drawings</span><span>Hardware integration</span><span>Module standardization</span><span>3D modelling</span><span>Texturing</span><span>Scene lighting</span><span>V-Ray rendering</span><span>Compositing</span><span>IMOS iX</span><span>Factory-ready drawings</span><span>Hardware integration</span><span>Module standardization</span></div></div>
     </section>
-    <section class="approach wrap section" id="work" aria-labelledby="work-heading">
-      <figure class="concept-figure reveal"><img src="assets/kitchen-concept.webp" width="1536" height="1024" loading="lazy" alt="Illustrative kitchen with green cabinets, walnut joinery and a stone island"><figcaption>AI-generated interior concept, presented for illustration.</figcaption></figure>
-      <div class="approach-copy reveal"><h2 id="work-heading">A clear vision.<br>A buildable design.</h2><p class="section-intro">From light and material to the details that make a cabinet work, I connect design intent with execution.</p>
-        <div class="expertise"><h3><span class="icon" data-icon="cube" aria-hidden="true"></span>Visualize the space</h3><p>Interior modelling, material mapping, lighting and V-Ray renders that bring residential spaces into focus.</p></div>
-        <div class="expertise"><h3><span class="icon" data-icon="ruler" aria-hidden="true"></span>Resolve the details</h3><p>IMOS iX development, factory-ready drawings, modular configurations and hardware integration.</p></div>
-        <div class="expertise"><h3><span class="icon" data-icon="stack" aria-hidden="true"></span>Bring teams together</h3><p>Technical reviews, mentoring and coordination between design, factory and site teams.</p></div>
+
+    <section class="section practice" id="work" aria-labelledby="work-heading">
+      <div class="wrap section-head reveal">
+        <p class="kicker"><span>01</span> Practice</p>
+        <h2 id="work-heading">A clear vision. <em>A buildable design.</em></h2>
+        <p class="lede">From light and material to the details that make a cabinet work, I connect design intent with execution.</p>
+      </div>
+      <div class="wrap practice-grid">
+        <figure class="concept reveal">
+          <div class="concept-frame"><img src="assets/kitchen-concept.webp" width="1536" height="1024" loading="lazy" alt="Illustrative kitchen with green cabinets, walnut joinery and a stone island"></div>
+          <figcaption><span class="tag">AI-generated</span>Illustrative interior concept. Not a client project.</figcaption>
+        </figure>
+        <div class="pillars">
+          <article class="pillar reveal"><span class="pillar-icon icon" data-icon="cube" aria-hidden="true"></span><div><h3>Visualize the space</h3><p>Interior and furniture modelling, texturing, material mapping, lighting and V-Ray renders that bring residential spaces into focus.</p></div></article>
+          <article class="pillar reveal"><span class="pillar-icon icon" data-icon="ruler" aria-hidden="true"></span><div><h3>Resolve the details</h3><p>IMOS iX module development, factory-ready drawings, standard configurations, materials and hardware integration.</p></div></article>
+          <article class="pillar reveal"><span class="pillar-icon icon" data-icon="stack" aria-hidden="true"></span><div><h3>Bring teams together</h3><p>Technical reviews, product R&D support, mentoring and alignment between design, factory and site teams.</p></div></article>
+        </div>
+      </div>
+      <div class="wrap projects reveal" aria-labelledby="projects-heading">
+        <div class="projects-head"><h3 id="projects-heading">Selected visualization projects</h3><p>3D modelling, architectural texturing, scene lighting, V-Ray rendering and image compositing for interior design presentation work.</p></div>
+        <ol class="project-list">
+          <li><span class="num">01</span><span class="name">Sobha City</span><span class="kind">Interior presentation</span></li>
+          <li><span class="num">02</span><span class="name">Century Central</span><span class="kind">Interior presentation</span></li>
+          <li><span class="num">03</span><span class="name">5-Summits</span><span class="kind">Interior presentation</span></li>
+        </ol>
+        <p class="note">Project names as listed in my resume. Original project imagery is not shown here.</p>
       </div>
     </section>
-    <section class="projects wrap section reveal" aria-labelledby="projects-heading">
-      <h2 id="projects-heading">Selected visualization experience</h2>
-      <p class="section-intro">Interior presentation work spanning 3D modelling, architectural texturing, scene lighting, V-Ray rendering and image compositing.</p>
-      <div class="project-names"><h3>Sobha City</h3><h3>Century Central</h3><h3>5-Summits</h3></div>
-      <p class="note">Projects listed in my professional resume. Original project imagery is not displayed here.</p>
-    </section>
-    <section class="experience wrap section" id="experience" aria-labelledby="experience-heading">
-      <div class="experience-heading reveal"><p class="eyebrow">A decade of making spaces work</p><h2 id="experience-heading">From visualization<br>to technical leadership.</h2><p class="section-intro">A career built across design, production and the people connecting them.</p></div>
-      <div class="timeline">
-        <article class="job reveal"><div class="job-meta"><span>Livspace</span><time>2022 - Jan 2026</time></div><h3>IMOS Product Designer, Technical</h3><p>Created and managed 62,000+ cabinet modules, developed Experience Centre display units and supported product R&D and standardization.</p><p class="job-detail">Coordinated 10-15 team members, mentored colleagues and resolved production detailing queries.</p></article>
-        <article class="job reveal"><div class="job-meta"><span>SpiceRack Kitchens</span><time>2019 - 2022</time></div><h3>Senior / Lead Interior Designer</h3><p>Led projects from space planning through production and installation, while continuing hands-on 3ds Max modelling and V-Ray rendering.</p><p class="job-detail">Coordinated a team of 8 across design, visualization, factory and site.</p></article>
-        <article class="job reveal"><div class="job-meta"><span>SpiceRack Kitchens</span><time>2017 - 2019</time></div><h3>Interior Designer</h3><p>Translated client requirements into layouts, materials and rendered design options, supported by execution drawings and feasibility checks.</p></article>
-        <article class="job reveal"><div class="job-meta"><span>SpiceRack Kitchens</span><time>2015 - 2017</time></div><h3>3D Visualizer</h3><p>Produced kitchen, wardrobe and residential models and renders, including materials, lighting, revisions and Photoshop compositing.</p></article>
+
+    <section class="section toolkit" id="tools" aria-labelledby="tools-heading">
+      <div class="wrap section-head reveal">
+        <p class="kicker"><span>02</span> Toolkit</p>
+        <h2 id="tools-heading">Ten tools. <em>One workflow.</em></h2>
+        <p class="lede">From the first render to the cutting list. Drag the carousel, select a tile, or choose a tool below.</p>
+      </div>
+      <div class="wrap">
+        <div class="tools-stage">
+          <div id="tools-canvas" role="img" aria-label="Ten glossy 3D tiles carrying the official software logos, turning on a carousel. The selected tool faces forward. Use the tool buttons below to choose one."><div class="tools-loading" role="status">Loading the 3D toolkit…</div></div>
+          <div class="tool-detail" aria-live="polite"><p class="tool-category" id="tool-category">3D & rendering</p><h3 id="tool-title">3ds Max</h3><p id="tool-description">Architectural, interior and furniture modelling, scene composition and material mapping. Hands-on from 2015 to 2022.</p></div>
+          <button id="tools-motion" class="tool-button motion-control" type="button" aria-pressed="false" disabled><span class="icon" data-icon="pause" aria-hidden="true"></span><span class="label">Pause motion</span></button>
+        </div>
+        <div class="tools-picker" role="group" aria-label="Choose a software tool">
+          <button type="button" data-tool="0" aria-pressed="true" data-kind="icon" style="--tb:#0e2c36;--tf:#37a5cc"><span class="logo-plate"><img src="assets/logos/3ds-max.svg" alt="" loading="lazy"></span><span class="tool-name">3ds Max</span></button>
+          <button type="button" data-tool="1" aria-pressed="false" data-kind="tile" style="--tb:#2857af;--tf:#7aa7ff"><span class="logo-plate"><img src="assets/logos/v-ray.svg" alt="" loading="lazy"></span><span class="tool-name">V-Ray</span></button>
+          <button type="button" data-tool="2" aria-pressed="false" data-kind="tile" style="--tb:#001e36;--tf:#31a8ff"><span class="logo-plate"><img src="assets/logos/photoshop.svg" alt="" loading="lazy"></span><span class="tool-name">Photoshop</span></button>
+          <button type="button" data-tool="3" aria-pressed="false" data-kind="wordmark" data-caption="iX CAD" style="--tb:#ece7df;--tf:#dd0b2f"><span class="logo-plate"><img src="assets/logos/imos.svg" alt="" loading="lazy"></span><span class="tool-name">IMOS iX</span></button>
+          <button type="button" data-tool="4" aria-pressed="false" data-kind="wordmark" data-caption="Cut Rite" style="--tb:#ece7df;--tf:#3d7cc9"><span class="logo-plate"><img src="assets/logos/homag.svg" alt="" loading="lazy"></span><span class="tool-name">Cut Rite</span></button>
+          <button type="button" data-tool="5" aria-pressed="false" data-kind="wordmark" data-caption="KCDW" style="--tb:#ece7df;--tf:#f68b1f"><span class="logo-plate"><img src="assets/logos/kcd.svg" alt="" loading="lazy"></span><span class="tool-name">KCDW</span></button>
+          <button type="button" data-tool="6" aria-pressed="false" data-kind="tile" style="--tb:#330000;--tf:#ff9a00"><span class="logo-plate"><img src="assets/logos/illustrator.svg" alt="" loading="lazy"></span><span class="tool-name">Illustrator</span></button>
+          <button type="button" data-tool="7" aria-pressed="false" data-kind="tile" style="--tb:#00005b;--tf:#9999ff"><span class="logo-plate"><img src="assets/logos/premiere-pro.svg" alt="" loading="lazy"></span><span class="tool-name">Premiere Pro</span></button>
+          <button type="button" data-tool="8" aria-pressed="false" data-kind="tile" style="--tb:#00005b;--tf:#9999ff"><span class="logo-plate"><img src="assets/logos/after-effects.svg" alt="" loading="lazy"></span><span class="tool-name">After Effects</span></button>
+          <button type="button" data-tool="9" aria-pressed="false" data-kind="wordmark" style="--tb:#ece7df;--tf:#45b649"><span class="logo-plate"><img src="assets/logos/coreldraw.png" alt="" loading="lazy"></span><span class="tool-name">CorelDRAW</span></button>
+        </div>
+        <p class="note">Official product logos, shown only to identify the software in my toolkit. Cut Rite appears with the HOMAG logo. All trademarks belong to their respective owners.</p>
       </div>
     </section>
-    <section class="skills wrap section reveal" id="tools" aria-labelledby="skills-heading"><h2 id="skills-heading">The tools behind the detail.</h2>
-      <p class="section-intro">Explore my toolkit in 3D. Select a floating tile or choose a tool below.</p>
-      <div class="tools-stage">
-        <div id="tools-canvas" role="img" aria-label="Ten colorful floating 3D software tiles, gently turning in space. Select a tool using the buttons below."><div class="tools-loading" role="status">Loading the 3D toolkit…</div></div>
-        <button id="tools-motion" class="motion-control" type="button" aria-pressed="true" disabled><span class="icon" data-icon="pause" aria-hidden="true"></span><span>Pause motion</span></button>
+
+    <section class="section materials" aria-labelledby="materials-heading">
+      <div class="wrap section-head reveal">
+        <p class="kicker"><span>03</span> Beyond the software</p>
+        <h2 id="materials-heading">Knows what it is <em>made of.</em></h2>
+        <p class="lede">Practical knowledge of boards, finishes, hardware and installation, the details that make a design buildable.</p>
       </div>
-      <div class="tools-picker" role="group" aria-label="Explore a software tool">
-        <button type="button" data-tool="0" aria-pressed="true"><span class="icon" data-icon="cube" aria-hidden="true"></span>3ds Max</button>
-        <button type="button" data-tool="1" aria-pressed="false"><span class="icon" data-icon="sun" aria-hidden="true"></span>V-Ray</button>
-        <button type="button" data-tool="2" aria-pressed="false"><span class="icon" data-icon="image" aria-hidden="true"></span>Photoshop</button>
-        <button type="button" data-tool="3" aria-pressed="false"><span class="icon" data-icon="ruler" aria-hidden="true"></span>IMOS iX</button>
-        <button type="button" data-tool="4" aria-pressed="false"><span class="icon" data-icon="scissors" aria-hidden="true"></span>Cut Rite</button>
-        <button type="button" data-tool="5" aria-pressed="false"><span class="icon" data-icon="stack" aria-hidden="true"></span>KCDW</button>
-        <button type="button" data-tool="6" aria-pressed="false"><span class="icon" data-icon="vector-three" aria-hidden="true"></span>Illustrator</button>
-        <button type="button" data-tool="7" aria-pressed="false"><span class="icon" data-icon="film-strip" aria-hidden="true"></span>Premiere Pro</button>
-        <button type="button" data-tool="8" aria-pressed="false"><span class="icon" data-icon="sparkle" aria-hidden="true"></span>After Effects</button>
-        <button type="button" data-tool="9" aria-pressed="false"><span class="icon" data-icon="paint-brush" aria-hidden="true"></span>CorelDRAW</button>
+      <div class="wrap material-grid">
+        <article class="material-card reveal"><h3>Materials & finishes</h3><ul class="chips"><li>Plywood</li><li>MDF</li><li>HDHMR</li><li>Laminate surfaces</li><li>Shutter construction</li><li>Edge-banding</li><li>Finish selection</li><li>Material compatibility</li></ul></article>
+        <article class="material-card reveal"><h3>Hardware & fittings</h3><ul class="chips"><li>Hinges</li><li>Drawer runners / channels</li><li>Handles</li><li>Profiles</li><li>Minifix connectors</li><li>Assembly clearances</li><li>Installation considerations</li></ul></article>
+        <article class="material-card reveal"><h3>Cabinetry & production</h3><ul class="chips"><li>Modular kitchens</li><li>Wardrobes</li><li>Custom furniture</li><li>Production detailing</li><li>Shop drawings</li><li>Module standardization</li></ul></article>
       </div>
-      <div class="tool-detail" aria-live="polite"><h3 id="tool-title">3ds Max</h3><p id="tool-description">Architectural and furniture modelling, scene composition and material mapping.</p></div>
-      <div class="materials-note"><span class="icon" data-icon="ruler" aria-hidden="true"></span><p>Beyond the software: boards, finishes, hardware, assembly clearances and the production details that make a design buildable.</p></div>
-      <div class="education"><div><h3>BA in VFX & Animation</h3><p>Mahatma Gandhi University, Meghalaya<br>2013-2015 · 81%</p></div><div><h3>Creative Mind Graphic Design Award</h3><p>Winner in 2014 and 2015</p></div></div>
     </section>
-    <section class="contact wrap section reveal" id="contact" aria-labelledby="contact-heading"><p class="eyebrow">Bengaluru, India</p><h2 id="contact-heading">Let’s make your<br>next space work.</h2><a class="contact-email" href="mailto:rkiran.kumar95@gmail.com">rkiran.kumar95@gmail.com <span class="icon" data-icon="arrow-up-right" aria-hidden="true"></span></a><div class="contact-bottom"><a href="tel:+918892092016">+91 88920 92016</a><a class="text-link" href="Kiran-Kumar-Resume.pdf" download>Download resume <span class="icon" data-icon="arrow-down" aria-hidden="true"></span></a></div></section>
+
+    <section class="section experience" id="experience" aria-labelledby="experience-heading">
+      <div class="wrap experience-grid">
+        <div class="experience-head reveal">
+          <p class="kicker"><span>04</span> Experience</p>
+          <h2 id="experience-heading">From visualization <em>to technical leadership.</em></h2>
+          <p class="lede">A decade built across design, production and the people connecting them.</p>
+        </div>
+        <ol class="timeline">
+          <li class="job reveal"><div class="job-meta"><span>Livspace</span><time>2022 - Jan 2026</time></div><h3>IMOS Product Designer, Technical</h3><ul><li>Created and managed 62,000+ cabinet modules in IMOS iX, supporting standardized configurations and production-ready detailing.</li><li>Designed custom display units for Livspace Experience Centre studios, converting concepts into factory-ready units.</li><li>Contributed to product R&D and module standardization for kitchens, wardrobes and custom furniture.</li><li>Coordinated 10-15 team members on technical decisions, IMOS knowledge-sharing, mentoring and issue resolution.</li></ul></li>
+          <li class="job reveal"><div class="job-meta"><span>SpiceRack Kitchens Pvt. Ltd.</span><time>2019 - 2022</time></div><h3>Senior / Lead Interior Designer</h3><ul><li>Managed interior projects from space planning and design approval through technical drawings, production and site installation.</li><li>Continued hands-on 3ds Max modelling and V-Ray rendering for residential presentations.</li><li>Coordinated a team of 8 across designers, visualizers, factory and site teams.</li></ul></li>
+          <li class="job reveal"><div class="job-meta"><span>SpiceRack Kitchens Pvt. Ltd.</span><time>2017 - 2019</time></div><h3>Interior Designer</h3><ul><li>Converted client requirements into layouts, space plans, finish and hardware selections, using visualization to explain design options.</li><li>Prepared execution drawings and coordinated factory feasibility checks and site installation.</li></ul></li>
+          <li class="job reveal"><div class="job-meta"><span>SpiceRack Kitchens Pvt. Ltd.</span><time>2015 - 2017</time></div><h3>3D Visualizer</h3><ul><li>Produced 3D models and presentation renders in 3ds Max and V-Ray for kitchens, wardrobes and residential spaces.</li><li>Developed interior materials, textures and lighting, and supported client revisions, approvals and Photoshop compositing.</li></ul></li>
+        </ol>
+      </div>
+      <div class="wrap education">
+        <div class="edu-card reveal"><p class="kicker">Education</p><h3>Bachelor of Arts in VFX & Animation</h3><p>Mahatma Gandhi University, Meghalaya · 2013-2015 · 81%</p></div>
+        <div class="edu-card reveal"><p class="kicker">Recognition</p><h3>Creative Mind Graphic Design Award</h3><p>Winner in 2014 and 2015</p></div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-heading">
+      <div class="wrap contact-inner reveal">
+        <p class="kicker"><span>05</span> Contact · Bengaluru, India</p>
+        <h2 id="contact-heading">Let’s make your next space <em>work.</em></h2>
+        <a class="contact-email" href="mailto:rkiran.kumar95@gmail.com">rkiran.kumar95@gmail.com <span class="icon" data-icon="arrow-up-right" aria-hidden="true"></span></a>
+        <div class="contact-row"><a class="button ghost" href="tel:+918892092016">+91 88920 92016</a><a class="button primary" href="Kiran-Kumar-Resume.pdf" download>Download resume <span class="icon" data-icon="arrow-down" aria-hidden="true"></span></a></div>
+      </div>
+    </section>
   </main>
-  <footer class="wrap footer"><span>© <span id="year">2026</span> Kiran Kumar R</span><a href="https://github.com/sanidhyy/3d-portfolio" target="_blank" rel="noreferrer">3D interaction inspired by sanidhyy ↗</a><a href="#main">Back to top ↑</a></footer>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>© <span id="year">2026</span> Kiran Kumar R</span>
+      <span>3D scenes are illustrative and built in code. Interaction inspired by <a href="https://github.com/sanidhyy/3d-portfolio" target="_blank" rel="noreferrer">sanidhyy/3d-portfolio</a>.</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
 </body>
 </html>
